@@ -1,0 +1,1506 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>PHP-Utility class - documentation</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, maximum-scale=1.0" />
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <!--[if lt IE 9]>
+  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+</head>
+<body id="top">
+	<header>
+		<h1>PHP-Utility class</h1>
+		<h4>25+ useful PHP functions</h4>
+	</header>
+
+	<section>
+		<aside>
+			<h4>Table of Content</h4>
+			<ul>
+				<li><a data-scroll href="#introduction">+ Introduction</a></li>
+				<li><a data-scroll href="#makeSafe">+ makeSafe</a></li>
+				<li><a data-scroll href="#is_mail">+ is_mail</a></li>
+				<li><a data-scroll href="#read_more">+ read_more</a></li>
+				<li><a data-scroll href="#arabize_date">+ arabize_date</a></li>
+				<li><a data-scroll href="#createRandomKey">+ createRandomKey</a></li>
+				<li><a data-scroll href="#title">+ title</a></li>
+				<li><a data-scroll href="#match_password">+ match_password</a></li>
+				<li><a data-scroll href="#redirect">+ redirect</a></li>
+				<li><a data-scroll href="#counter">+ counter</a></li>
+				<li><a data-scroll href="#YoutubeID">+ YoutubeID</a></li>
+				<li><a data-scroll href="#YoutubeVideo">+ YoutubeVideo</a></li>
+				<li><a data-scroll href="#embedYoutube">+ embedYoutube</a></li>
+				<li><a data-scroll href="#discount">+ discount</a></li>
+				<li><a data-scroll href="#TinyURL">+ TinyURL</a></li>
+				<li><a data-scroll href="#Bitly">+ Bitly</a></li>
+				<li><a data-scroll href="#Adfly">+ Adfly</a></li>
+				<li><a data-scroll href="#googl">+ googl</a></li>
+				<li><a data-scroll href="#getTitle">+ getTitle</a></li>
+				<li><a data-scroll href="#getMeta">+ getMeta</a></li>
+				<li><a data-scroll href="#alert">+ alert</a></li>
+				<li><a data-scroll href="#vimeo">+ vimeo</a></li>
+				<li><a data-scroll href="#ImgurUpload">+ ImgurUpload</a></li>
+				<li><a data-scroll href="#avatar">+ avatar</a></li>
+				<li><a data-scroll href="#isOlderThan">+ isOlderThan</a></li>
+				<li><a data-scroll href="#get_fb_count">+ get_fb_count</a></li>
+				<li><a data-scroll href="#get_twitter_count">+ get_twitter_count</a></li>
+				<li><a data-scroll href="#readPDF">+ readPDF</a></li>
+				<li><a data-scroll href="#facebookInfo">+ facebookInfo</a></li>
+				<li><a data-scroll href="#facebookImage">+ facebookImage</a></li>
+				<li><a data-scroll href="#BBCODE">+ BBCODE</a></li>
+				<li><a data-scroll href="#badWords">+ badWords</a></li>
+				<li><a data-scroll href="#timeAgo">+ timeAgo</a></li>
+				<li><a data-scroll href="#byteConvert">+ byteConvert</a></li>
+				<li><a data-scroll href="#file_extension">+ file_extension</a></li>
+				<li><a data-scroll href="#urlValidation">+ urlValidation</a></li>
+				<li><a data-scroll href="#getAllUrls">+ getAllUrls</a></li>
+				<li><a data-scroll href="#remoteDownload">+ remoteDownload</a></li>
+				<li><a data-scroll href="#final">+ Final word</a></li>
+				<li><a data-scroll href="#top">+ Back to top</a></li>
+			</ul>
+		</aside>
+		<div id="wrapper">
+
+			<div class="row" id="introduction">
+				<h2>Introduction</h2>
+				<div class="content">
+					<p>Thank you for use. Thanks so much!</p>
+				<h3>Follow me on :</h3>	
+				<ul>
+					<li>Twitter : <a href="https://twitter.com/aomm1ez" target="_blank">https://twitter.com/aomm1ez</a></li>
+					<li>Facebook  : <a href="http://fb.me/aommiez/" target="_blank">http://fb.me/aommez/</a></li>
+				</ul>
+
+				</div>
+			</div>
+
+			<div class="row" id="makeSafe">
+				<h2>makeSafe</h2>
+				<div class="content">
+					<p>This function helps you to clear the inputs/gets value from. It can be used with int values like :</p>
+					<pre><code class="php">$PHPultimate->makeSafe($_GET['id'],true,true);</code></pre>
+					<p>or you can use it to clear the input value from HTML code like this :</p>
+					<pre><code class="php">$PHPultimate->makeSafe($_POST['message'],false,true);</code></pre>
+					<table>
+						<thead>
+							<th>Parameter</th>
+							<th>Type</th>
+							<th>Required</th>
+							<th>Default value</th>
+							<th>Description</th>
+						</thead>
+						<tbody>
+							<tr>
+								<td>txt</td>
+								<td>string</td>
+								<td>Yes</td>
+								<td>null</td>
+								<td>The text you want to clear</td>
+							</tr>
+							<tr>
+								<td>intval</td>
+								<td>boolean</td>
+								<td>No</td>
+								<td>False</td>
+								<td>True if you want to return the integer value.</td>
+							</tr>
+							<tr>
+								<td>no_html</td>
+								<td>boolean</td>
+								<td>No</td>
+								<td>false</td>
+								<td>True if you want to clear the string from HTML tags.</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+
+			<div class="row" id="is_mail">
+				<h2>is_mail</h2>
+				<div class="content">
+					<p>This functions used to check if the email address is valid or not.</p>
+<pre><code class="php">if($PHPultimate->is_mail("coder@olo.wtf"))
+  echo "This email address is valid.";
+else 
+  echo "This email address is NOT valid.";</code></pre>
+					<h3>Output :</h3>
+					<div class="output">This email address is valid.</div>
+					<table>
+						<thead>
+							<th>Parameter</th>
+							<th>Type</th>
+							<th>Required</th>
+							<th>Default value</th>
+							<th>Description</th>
+						</thead>
+						<tbody>
+							<tr>
+								<td>str</td>
+								<td>string</td>
+								<td>Yes</td>
+								<td>null</td>
+								<td>The email address you want to validate.</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+
+			<div class="row" id="read_more">
+				<h2>read_more</h2>
+				<div class="content">
+					<p>With this function you can split your text and returns any numbers of words you want.</p>
+					<pre><code class="php">echo $PHPultimate->read_more("Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.", 20);</code></pre>
+					<h3>Output :</h3>
+					<div class="output">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy [ ... ]</div>
+					<table>
+						<thead>
+							<th>Parameter</th>
+							<th>Type</th>
+							<th>Required</th>
+							<th>Default value</th>
+							<th>Description</th>
+						</thead>
+						<tbody>
+							<tr>
+								<td>text</td>
+								<td>string</td>
+								<td>Yes</td>
+								<td>null</td>
+								<td>The text you want to split.</td>
+							</tr>
+							<tr>
+								<td>words_count</td>
+								<td>integer</td>
+								<td>NO</td>
+								<td>10</td>
+								<td>The number of words you want.</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+
+			<div class="row" id="arabize_date">
+				<h2>arabize_date</h2>
+				<div class="content">
+					<p>This function will help you convert any given date to a date in arabic letters.</p>
+					<pre><code class="php">echo $PHPultimate->arabize_date("13-09-2014");</code></pre>
+					<h3>Output :</h3>
+					<div class="output">13 أكتوبر 2014</div>
+					<table>
+						<thead>
+							<th>Parameter</th>
+							<th>Type</th>
+							<th>Required</th>
+							<th>Default value</th>
+							<th>Description</th>
+						</thead>
+						<tbody>
+							<tr>
+								<td>text</td>
+								<td>string</td>
+								<td>Yes</td>
+								<td>null</td>
+								<td>The date you want to write in arabic letters.</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+
+			<div class="row" id="createRandomKey">
+				<h2>createRandomKey</h2>
+				<div class="content">
+					<p>This functions generates random letters/numbers or both of them. You can also choose how many characters you want to display.</p>
+					<p>To generate 10 random numbers : </p>
+					<pre><code class="php">echo $PHPultimate->createRandomKey(10, 1);</code></pre>
+					<h3>Output :</h3>
+					<div class="output">3161973823</div>
+					<p>To generate 10 random letters : </p>
+					<pre><code class="php">echo $PHPultimate->createRandomKey(10, 'a');</code></pre>
+					<h3>Output :</h3>
+					<div class="output">vqmPvRvaFo</div>
+					<p>To generate 10 different characters : </p>
+					<pre><code class="php">echo $PHPultimate->createRandomKey(10, 'all');</code></pre>
+					<pre><code class="php">echo $PHPultimate->createRandomKey(10);</code></pre>
+					<h3>Output :</h3>
+					<div class="output">ROS9KW8Zbb</div>
+					<table>
+						<thead>
+							<th>Parameter</th>
+							<th>Type</th>
+							<th>Required</th>
+							<th>Default value</th>
+							<th>Description</th>
+						</thead>
+						<tbody>
+							<tr>
+								<td>amount</td>
+								<td>integer</td>
+								<td>NO</td>
+								<td>5</td>
+								<td>The amount of characters you need.</td>
+							</tr>
+							<tr>
+								<td>char</td>
+								<td>string</td>
+								<td>NO</td>
+								<td>all</td>
+								<td>The type of characters you want. 1 for numbers, a for letter, all for both.</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+
+			<div class="row" id="title">
+				<h2>title</h2>
+				<div class="content">
+					<p>This function helps to create a title/slogan from a string.</p>
+					<pre><code class="php">echo $PHPultimate->title("This is going to be the title of my post.");</code></pre>
+					<h3>Output :</h3>
+					<div class="output">This-is-going-to-be-the-title-of-my-post</div>
+					<table>
+						<thead>
+							<th>Parameter</th>
+							<th>Type</th>
+							<th>Required</th>
+							<th>Default value</th>
+							<th>Description</th>
+						</thead>
+						<tbody>
+							<tr>
+								<td>string</td>
+								<td>string</td>
+								<td>Yes</td>
+								<td>null</td>
+								<td>The string you want to turn into a title/slogan.</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+
+			<div class="row" id="match_password">
+				<h2>match_password</h2>
+				<div class="content">
+					<p>With this function you can check if two password are the same.</p>
+<pre><code class="php">if($PHPultimate->match_password("123","1345"))
+  echo "This two passwords are equal.";
+else 
+  echo "This two passwords are NOT equal.";</code></pre>
+					<h3>Output :</h3>
+					<div class="output">This two passwords are NOT equal.</div>
+					<table>
+						<thead>
+							<th>Parameter</th>
+							<th>Type</th>
+							<th>Required</th>
+							<th>Default value</th>
+							<th>Description</th>
+						</thead>
+						<tbody>
+							<tr>
+								<td>password</td>
+								<td>string</td>
+								<td>Yes</td>
+								<td>null</td>
+								<td>The password you want to compare.</td>
+							</tr>
+							<tr>
+								<td>repeat_passowrd</td>
+								<td>string</td>
+								<td>Yes</td>
+								<td>null</td>
+								<td>The password you want to compare with.</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+
+			<div class="row" id="redirect">
+				<h2>redirect</h2>
+				<div class="content">
+					<p>This function is designed to redirect users to any page you want in a given number of seconds.</p>
+					<p>to redirect to http://google.com immediatly use the following coce :</p>
+					<pre><code class="php">echo $PHPultimate->redirect("http://google.com");</code></pre>
+					<p>to redirect to http://google.com in 10 seconds usee :</p>
+					<pre><code class="php">echo $PHPultimate->redirect("http://google.com", 10);</code></pre>
+					<table>
+						<thead>
+							<th>Parameter</th>
+							<th>Type</th>
+							<th>Required</th>
+							<th>Default value</th>
+							<th>Description</th>
+						</thead>
+						<tbody>
+							<tr>
+								<td>url</td>
+								<td>string</td>
+								<td>Yes</td>
+								<td>null</td>
+								<td>The url you want to redirect to.</td>
+							</tr>
+							<tr>
+								<td>seconds</td>
+								<td>integer</td>
+								<td>NO</td>
+								<td>0</td>
+								<td>Number of seconds you want to redirect after.</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+
+			<div class="row" id="counter">
+				<h2>counter</h2>
+				<div class="content">
+					<p>This function works the same as the function above expect that with this function you can show a message and a counter before redirecting.</p>
+					<pre><code class="php">echo $PHPultimate->counter("http://google.com", "You'll be sent to google in x seconds.", 10);</code></pre>
+					<h3>Output :</h3>
+					<div class="output">You'll be sent to google in 10 seconds.</div>
+					<p class="note">Note : After the counter hits 0, You'll be redirected to http://google.com.</p>
+					<table>
+						<thead>
+							<th>Parameter</th>
+							<th>Type</th>
+							<th>Required</th>
+							<th>Default value</th>
+							<th>Description</th>
+						</thead>
+						<tbody>
+							<tr>
+								<td>url</td>
+								<td>string</td>
+								<td>Yes</td>
+								<td>null</td>
+								<td>The url you want to redirect to.</td>
+							</tr>
+							<tr>
+								<td>text</td>
+								<td>string</td>
+								<td>Yes</td>
+								<td>null</td>
+								<td>The text you want to show with the counter.</td>
+							</tr>
+							<tr>
+								<td>seconds</td>
+								<td>integer</td>
+								<td>NO</td>
+								<td>0</td>
+								<td>Number of seconds you want to redirect after.</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+
+			<div class="row" id="YoutubeID">
+				<h2>YoutubeID</h2>
+				<div class="content">
+					<p>This function will help you to extract the YouTube video ID from all url youtube formats.</p>
+					<pre><code class="php">$PHPultimate->YoutubeID("https://www.youtube.com/watch?v=FLNel4t8I1a");</code></pre>
+					<h3>Output :</h3>
+					<div class="output">FLNel4t8I1a</div>
+					<table>
+						<thead>
+							<th>Parameter</th>
+							<th>Type</th>
+							<th>Required</th>
+							<th>Default value</th>
+							<th>Description</th>
+						</thead>
+						<tbody>
+							<tr>
+								<td>url</td>
+								<td>string</td>
+								<td>Yes</td>
+								<td>null</td>
+								<td>The YouTube video url.</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+
+			<div class="row" id="YoutubeVideo">
+				<h2>YoutubeVideo</h2>
+				<div class="content">
+					<p>The 'YoutubeVideo' function helps you to grab all the YouTube video details (title, author, published, description, thumbnail, hq image, duration, views, rating) using the url or the video ID.</p>
+					<pre><code class="php">$video = $PHPultimate->YoutubeVideo("https://www.youtube.com/watch?v=Kdgt1ZHkvnM");
+
+echo "Title : ".$video['title'];
+echo "author : ".$video['author'];
+echo "published : ".$video['published'];
+echo "description : ".$video['description'];
+echo "thumbnail : ".$video['thumbnail'];
+echo "hq image : ".$video['hq'];
+echo "duration : ".$video['duration'];
+echo "views : ".$video['views'];
+echo "rating : ".$video['rating'];</code></pre>
+					<h3>Output :</h3>
+					<div class="output">
+						Title : Epic Funny Cats 20 Minutes <br />
+						author : Catsbook <br />
+						published : 2013-02-06T13:37:46.000Z <br />
+						description : Epic Funny Cats 20 Minutes funny cats .. <br />
+						thumbnail : http://i.ytimg.com/vi/Kdgt1ZHkvnM/0.jpg <br />
+						hq image : http://i.ytimg.com/vi/Kdgt1ZHkvnM/hqdefault.jpg <br />
+						duration : 1201 <br />
+						views : 34911637 <br />
+						rating : 124525
+					</div>
+					<table>
+						<thead>
+							<th>Parameter</th>
+							<th>Type</th>
+							<th>Required</th>
+							<th>Default value</th>
+							<th>Description</th>
+						</thead>
+						<tbody>
+							<tr>
+								<td>ID</td>
+								<td>string</td>
+								<td>Yes</td>
+								<td>null</td>
+								<td>The YouTube video url or ID.</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+
+			<div class="row" id="embedYoutube">
+				<h2>embedYoutube</h2>
+				<div class="content">
+					<p>Embed any YouTube video with this function and customize the embed box as you want.</p>
+					<pre><code class="php">echo $PHPultimate->embedYoutube("Kdgt1ZHkvnM", 500, 240, 'light', 0, 0);</code></pre>
+					<h3>Output :</h3>
+					<div class="output"><iframe width="500" height="240" src="http://www.youtube.com/embed/Kdgt1ZHkvnM?theme=light&amp;autoplay=0&amp;showinfo=0"frameborder="0"></iframe></div>
+					<p>To make the video starts automatically use this :</p>
+					<pre><code class="php">echo $PHPultimate->embedYoutube("Kdgt1ZHkvnM", 500, 240, 'light', 1, 0);</code></pre>
+					<p>For the dark theme of the embed :</p>
+					<pre><code class="php">echo $PHPultimate->embedYoutube("Kdgt1ZHkvnM", 500, 240, 'dark', 0, 0);</code></pre>
+					<p>To display the video information :</p>
+					<pre><code class="php">echo $PHPultimate->embedYoutube("Kdgt1ZHkvnM", 500, 240, 'light', 0, 1);</code></pre>
+					<table>
+						<thead>
+							<th>Parameter</th>
+							<th>Type</th>
+							<th>Required</th>
+							<th>Default value</th>
+							<th>Description</th>
+						</thead>
+						<tbody>
+							<tr>
+								<td>url</td>
+								<td>string</td>
+								<td>Yes</td>
+								<td>null</td>
+								<td>The YouTube video url or ID.</td>
+							</tr>
+							<tr>
+								<td>width</td>
+								<td>integer</td>
+								<td>NO</td>
+								<td>640</td>
+								<td>The box width.</td>
+							</tr>
+							<tr>
+								<td>height</td>
+								<td>integer</td>
+								<td>NO</td>
+								<td>390</td>
+								<td>The box height.</td>
+							</tr>
+							<tr>
+								<td>theme</td>
+								<td>string</td>
+								<td>NO</td>
+								<td>dark</td>
+								<td>The embed theme it can be "light" or "dark".</td>
+							</tr>
+							<tr>
+								<td>autoplay</td>
+								<td>integer</td>
+								<td>NO</td>
+								<td>0</td>
+								<td>autoplay the video, 1 for Yes, 0 for No.</td>
+							</tr>
+							<tr>
+								<td>showinfo</td>
+								<td>integer</td>
+								<td>NO</td>
+								<td>0</td>
+								<td>show the video information, 1 for Yes, 0 for No.</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+
+			<div class="row" id="discount">
+				<h2>discount</h2>
+				<div class="content">
+					This functions automatically calculate the discount percentage.
+					<pre><code class="php">echo $PHPultimate->discount(200, 140);</code></pre>
+					<h3>Output :</h3>
+					<div class="output">30%</div>
+					<pre><code class="php">echo $PHPultimate->discount(255, 200);</code></pre>
+					<h3>Output :</h3>
+					<div class="output">21%</div>
+					<table>
+						<thead>
+							<th>Parameter</th>
+							<th>Type</th>
+							<th>Required</th>
+							<th>Default value</th>
+							<th>Description</th>
+						</thead>
+						<tbody>
+							<tr>
+								<td>old_price</td>
+								<td>integer</td>
+								<td>Yes</td>
+								<td>null</td>
+								<td>The old price before the discount.</td>
+							</tr>
+							<tr>
+								<td>old_price</td>
+								<td>integer</td>
+								<td>Yes</td>
+								<td>null</td>
+								<td>The sale price.</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+
+			<div class="row" id="TinyURL">
+				<h2>TinyURL</h2>
+				<div class="content">
+					<p>Make any url shorter using the TinyURL service.</p>
+					<pre><code class="code">echo $PHPultimate->TinyURL("http://olo.wtf");</code></pre>
+					<h3>Output :</h3>
+					<div class="output">http://tinyurl.com/kwdbm4k</div>
+					<table>
+						<thead>
+							<th>Parameter</th>
+							<th>Type</th>
+							<th>Required</th>
+							<th>Default value</th>
+							<th>Description</th>
+						</thead>
+						<tbody>
+							<tr>
+								<td>url</td>
+								<td>string</td>
+								<td>Yes</td>
+								<td>null</td>
+								<td>The url you want to make it short.</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+			<div class="row" id="Bitly">
+				<h2>Bitly</h2>
+				<div class="content">
+					<p>Use this function to short url from Bit.ly service.</p>
+					<pre><code class="php">echo $PHPultimate->Bitly("http://olo.wtf", 'login' , 'apiKey');</code></pre>
+					<h3>Output :</h3>
+					<div class="output">http://bit.ly/1qSTat8</div>
+					<table>
+						<thead>
+							<th>Parameter</th>
+							<th>Type</th>
+							<th>Required</th>
+							<th>Default value</th>
+							<th>Description</th>
+						</thead>
+						<tbody>
+							<tr>
+								<td>url</td>
+								<td>string</td>
+								<td>Yes</td>
+								<td>null</td>
+								<td>The url you want to make it short.</td>
+							</tr>
+							<tr>
+								<td>login</td>
+								<td>string</td>
+								<td>Yes</td>
+								<td>null</td>
+								<td>Your login in Bit.ly.</td>
+							</tr>
+							<tr>
+								<td>apiKey</td>
+								<td>string</td>
+								<td>Yes</td>
+								<td>null</td>
+								<td>Your apiKey in Bit.ly.</td>
+							</tr>
+						</tbody>
+					</table>
+					<p class="note">You need to create an application to use this function. <a href="http://dev.bitly.com/my_apps.html" target="_blank">Learn More</a></p>
+				</div>
+			</div>
+
+			<div class="row" id="Adfly">
+				<h2>Adfly</h2>
+				<div class="content">
+					<p>Use this function to short url from Adf.ly service.</p>
+					<pre><code class="php">echo $PHPultimate->Adfly("http://olo.wtf", 'uid' , 'APIKey');</code></pre>
+					<h3>Output :</h3>
+					<div class="output">http://adf.ly/s1mBU</div>
+					<table>
+						<thead>
+							<th>Parameter</th>
+							<th>Type</th>
+							<th>Required</th>
+							<th>Default value</th>
+							<th>Description</th>
+						</thead>
+						<tbody>
+							<tr>
+								<td>url</td>
+								<td>string</td>
+								<td>Yes</td>
+								<td>null</td>
+								<td>The url you want to make it short.</td>
+							</tr>
+							<tr>
+								<td>uid</td>
+								<td>string</td>
+								<td>Yes</td>
+								<td>null</td>
+								<td>Your userid in Adf.ly.</td>
+							</tr>
+							<tr>
+								<td>APIKey</td>
+								<td>string</td>
+								<td>Yes</td>
+								<td>null</td>
+								<td>Your APIKey in Adf.ly.</td>
+							</tr>
+						</tbody>
+					</table>
+					<p class="note">You need to create an application to use this function. <a href="http://adf.ly/#join" target="_blank">Learn More</a></p>
+				</div>
+			</div>
+
+			<div class="row" id="googl">
+				<h2>googl</h2>
+				<div class="content">
+					<p>Use this function to short url from goo.gl service.</p>
+					<pre><code class="php">echo $PHPultimate->googl("http://olo.wtf", 'apiKey');</code></pre>
+					<h3>Output :</h3>
+					<div class="output">http://goo.gl/Fd2QIr</div>
+					<table>
+						<thead>
+							<th>Parameter</th>
+							<th>Type</th>
+							<th>Required</th>
+							<th>Default value</th>
+							<th>Description</th>
+						</thead>
+						<tbody>
+							<tr>
+								<td>url</td>
+								<td>string</td>
+								<td>Yes</td>
+								<td>null</td>
+								<td>The url you want to make it short.</td>
+							</tr>
+							<tr>
+								<td>APIKey</td>
+								<td>string</td>
+								<td>Yes</td>
+								<td>null</td>
+								<td>Your APIKey from goo.gl.</td>
+							</tr>
+						</tbody>
+					</table>
+					<p class="note">You need to create an application to use this function. <a href="https://developers.google.com/url-shortener/v1/getting_started" target="_blank">Learn More</a></p>
+				</div>
+			</div>
+
+			<div class="row" id="getTitle">
+				<h2>getTitle</h2>
+				<div class="content">
+					This function grabs any website title.
+					<pre><code class="php">echo $PHPultimate->getTitle("http://codecanyon.net");</code></pre>
+					<h3>Output :</h3>
+					<div class="output">WordPress Plugins - jQuery Plugins - Bootstrap Plugins | CodeCanyon</div>
+					<table>
+						<thead>
+							<th>Parameter</th>
+							<th>Type</th>
+							<th>Required</th>
+							<th>Default value</th>
+							<th>Description</th>
+						</thead>
+						<tbody>
+							<tr>
+								<td>url</td>
+								<td>string</td>
+								<td>Yes</td>
+								<td>null</td>
+								<td>The url you want to get the title of.</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+
+			<div class="row" id="getMeta">
+				<h2>getMeta</h2>
+				<div class="content">
+					This function grabs the meta daba of given website.
+					<pre><code class="php">echo $PHPultimate->getMeta("http://youtube.com/", "keywords");</code></pre>
+					<h3>Output :</h3>
+					<div class="output">video, sharing, camera phone, video phone, free, upload</div>
+					<pre><code class="php">echo $PHPultimate->getMeta("http://youtube.com/", "description");</code></pre>
+					<h3>Output :</h3>
+					<div class="output">Share your videos with friends, family, and the world</div>
+					<table>
+						<thead>
+							<th>Parameter</th>
+							<th>Type</th>
+							<th>Required</th>
+							<th>Default value</th>
+							<th>Description</th>
+						</thead>
+						<tbody>
+							<tr>
+								<td>url</td>
+								<td>string</td>
+								<td>Yes</td>
+								<td>null</td>
+								<td>The url you want to get the meta of.</td>
+							</tr>
+							<tr>
+								<td>tag</td>
+								<td>string</td>
+								<td>Yes</td>
+								<td>null</td>
+								<td>The name of the meta tag you want.It can be 'keywords' or 'description'.</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+
+			<div class="row" id="alert">
+				<h2>alert</h2>
+				<div class="content">
+					This function generate nice looking alert messages with a specific message.
+					<pre><code class="php">echo $PHPultimate->alert("This is my info box message", "info");
+
+echo $PHPultimate->alert("This is my warning box message", "warning");
+
+echo $PHPultimate->alert("This is my error box message", "error");
+
+echo $PHPultimate->alert("This is my success box message", "success");</code></pre>
+				<h3>Output :</h3>
+				<div class="alert" style="background-color: #4baad3;"><p class="alertBox">This is my info box message</p></div>
+				<div class="alert" style="background-color: #ffb24d;"><p class="alertBox">This is my warning box message</p></div>
+				<div class="alert" style="background-color: #f25849;"><p class="alertBox">This is my error box message</p></div>
+				<div class="alert" style="background-color: #65c178;"><p class="alertBox">This is my success box message</p></div>
+					<table>
+						<thead>
+							<th>Parameter</th>
+							<th>Type</th>
+							<th>Required</th>
+							<th>Default value</th>
+							<th>Description</th>
+						</thead>
+						<tbody>
+							<tr>
+								<td>text</td>
+								<td>string</td>
+								<td>Yes</td>
+								<td>null</td>
+								<td>The text you want to show in the alert box.</td>
+							</tr>
+							<tr>
+								<td>alert</td>
+								<td>string</td>
+								<td>NO</td>
+								<td>info</td>
+								<td>The type of the alert you can use one of the types above.</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+
+			<div class="row" id="vimeo">
+				<h2>vimeo</h2>
+				<div class="content">
+					<p>Embed any vimeo video with this function and customize the embed box as you want.</p>
+					<pre><code class="php">echo $PHPultimate->vimeo("http://vimeo.com/channels/staffpicks/105492659", 500, 240, 0);</code></pre>
+					<h3>Output :</h3>
+					<div class="output">
+						<object width="500" height="240"><param name="allowfullscreen" value="true" />
+						 	<param name="allowscriptaccess" value="always" />
+						 	<param name="movie" value="http://vimeo.com/moogaloop.swf?clip_id=105492659&amp;autoplay=0" />
+						 	<embed src="http://vimeo.com/moogaloop.swf?clip_id=105492659&amp;autoplay=0" type="application/x-shockwave-flash" allowfullscreen="true" allowscriptaccess="always" width="500" height="240"></embed>
+						</object>
+					</div>
+					<p>To make the video starts automatically use this :</p>
+					<pre><code class="php">echo $PHPultimate->vimeo("105492659", 500, 240, 1);</code></pre>
+					<table>
+						<thead>
+							<th>Parameter</th>
+							<th>Type</th>
+							<th>Required</th>
+							<th>Default value</th>
+							<th>Description</th>
+						</thead>
+						<tbody>
+							<tr>
+								<td>ID</td>
+								<td>string</td>
+								<td>Yes</td>
+								<td>null</td>
+								<td>The video url or ID.</td>
+							</tr>
+							<tr>
+								<td>width</td>
+								<td>integer</td>
+								<td>NO</td>
+								<td>640</td>
+								<td>The box width.</td>
+							</tr>
+							<tr>
+								<td>height</td>
+								<td>integer</td>
+								<td>NO</td>
+								<td>390</td>
+								<td>The box height.</td>
+							</tr>
+							<tr>
+								<td>autoplay</td>
+								<td>integer</td>
+								<td>NO</td>
+								<td>0</td>
+								<td>autoplay the video, 1 for Yes, 0 for No.</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+
+			<div class="row" id="ImgurUpload">
+				<h2>ImgurUpload</h2>
+				<div class="content">
+					Upload your images to imgur.com using url or an image from your own server.
+					<pre><code class="php">echo $PHPultimate->ImgurUpload("1BV5FDXZ", 'http://olo.wtf/follow_on_envato.png');</code></pre>
+					<h3>Output :</h3>
+					<div class="output">http://i.imgur.com/ldfPTnK.png</div>
+					<p>Or uploading an image from your local service</p>
+					<pre><code class="php">echo $PHPultimate->ImgurUpload("1BV5FDXZ", 'follow_on_envato.png');</code></pre>
+					<h3>Output :</h3>
+					<div class="output">http://i.imgur.com/ldfPTnK.png</div>
+					<table>
+						<thead>
+							<th>Parameter</th>
+							<th>Type</th>
+							<th>Required</th>
+							<th>Default value</th>
+							<th>Description</th>
+						</thead>
+						<tbody>
+							<tr>
+								<td>ClientID</td>
+								<td>string</td>
+								<td>Yes</td>
+								<td>null</td>
+								<td>Your clientID on imgur.com.</td>
+							</tr>
+							<tr>
+								<td>imageFilename</td>
+								<td>string</td>
+								<td>Yes</td>
+								<td>null</td>
+								<td>The image name or the image url.</td>
+							</tr>
+						</tbody>
+					</table>
+					<p class="note">Note : You need to create an application to use this function. <a href="https://api.imgur.com/oauth2/addclient" target="_blank">Learn More</a></p>
+				</div>
+			</div>
+
+			<div class="row" id="avatar">
+				<h2>avatar</h2>
+				<div class="content">
+					With this function you can get anyone's avatar using their email address.
+					<pre><code class="php">echo $PHPultimate->avatar("coder@olo.wtf", '120');</code></pre>
+					<h3>Output :</h3>
+					<div class="output">http://www.gravatar.com/avatar/162bcce8c884e7de244101fa04393a93?d=120</div>
+					<table>
+						<thead>
+							<th>Parameter</th>
+							<th>Type</th>
+							<th>Required</th>
+							<th>Default value</th>
+							<th>Description</th>
+						</thead>
+						<tbody>
+							<tr>
+								<td>email</td>
+								<td>string</td>
+								<td>Yes</td>
+								<td>null</td>
+								<td>The email you want to grab the avatar of.</td>
+							</tr>
+							<tr>
+								<td>size</td>
+								<td>integer</td>
+								<td>NO</td>
+								<td>100px/100px</td>
+								<td>The image size.</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+
+			<div class="row" id="isOlderThan">
+				<h2>isOlderThan</h2>
+				<div class="content">
+					<p>This functions used to check if the age is valid or not.</p>
+<pre><code class="php">if($PHPultimate->isOlderThan("02/12/1991", '16'))
+   echo "Yes, You can use our website.";
+else
+   echo "Sorry, but you must be at least 16years old to use our website.";</code></pre>
+					<h3>Output :</h3>
+					<div class="output">This email address is valid.</div>
+					<table>
+						<thead>
+							<th>Parameter</th>
+							<th>Type</th>
+							<th>Required</th>
+							<th>Default value</th>
+							<th>Description</th>
+						</thead>
+						<tbody>
+							<tr>
+								<td>birthdate</td>
+								<td>string</td>
+								<td>Yes</td>
+								<td>null</td>
+								<td>The date you want to get the age from.</td>
+							</tr>
+							<tr>
+								<td>age</td>
+								<td>integer</td>
+								<td>Yes</td>
+								<td>18</td>
+								<td>The age you want to verify.</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+
+			<div class="row" id="get_fb_count">
+				<h2>get_fb_count</h2>
+				<div class="content">
+					With this function you can get any link stats ('Likes' or 'shares') from Facebook.
+					<pre><code class="php">echo $PHPultimate->get_fb_count("http://olo.wtf", 'likes');</code></pre>
+					<h3>Output :</h3>
+					<div class="output">15</div>
+					<pre><code class="php">echo $PHPultimate->get_fb_count("http://olo.wtf", 'shares');</code></pre>
+					<h3>Output :</h3>
+					<div class="output">9</div>
+					<table>
+						<thead>
+							<th>Parameter</th>
+							<th>Type</th>
+							<th>Required</th>
+							<th>Default value</th>
+							<th>Description</th>
+						</thead>
+						<tbody>
+							<tr>
+								<td>url</td>
+								<td>string</td>
+								<td>Yes</td>
+								<td>null</td>
+								<td>The url you want to get the stats of.</td>
+							</tr>
+							<tr>
+								<td>stat</td>
+								<td>string</td>
+								<td>NO</td>
+								<td>likes</td>
+								<td>The type of stats you want. Either 'likes' or 'shares'.</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+
+			<div class="row" id="get_twitter_count">
+				<h2>get_twitter_count</h2>
+				<div class="content">
+					With this function you can get any link stats from Twitter.
+					<pre><code class="php">echo $PHPultimate->get_twitter_count("http://olo.wtf");</code></pre>
+					<h3>Output :</h3>
+					<div class="output">22</div>
+					<table>
+						<thead>
+							<th>Parameter</th>
+							<th>Type</th>
+							<th>Required</th>
+							<th>Default value</th>
+							<th>Description</th>
+						</thead>
+						<tbody>
+							<tr>
+								<td>url</td>
+								<td>string</td>
+								<td>Yes</td>
+								<td>null</td>
+								<td>The url you want to get the stats of.</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+
+			<div class="row" id="readPDF">
+				<h2>readPDF</h2>
+				<div class="content">
+					This function will help you to integrate Google docs viewer to read your own documents and customize the width and height. It can be used with local or external links.
+					<pre><code class="php">echo $PHPultimate->readPDF("http://d2mdw063ttlqtq.cloudfront.net/resources/rates/envato_author_fee_schedule_(sept_2014).pdf", 680, 200);</code></pre>
+					<pre><code class="php">echo $PHPultimate->readPDF("envato_author_fee_schedule_(sept_2014).pdf", 680, 500);</code></pre>
+					<h3>Output :</h3>
+					<div class="output"><iframe src="http://docs.google.com/viewer?url=http://d2mdw063ttlqtq.cloudfront.net/resources/rates/envato_author_fee_schedule_(sept_2014).pdf&amp;embedded=true" width="680" height="200"></iframe></div>
+					<table>
+						<thead>
+							<th>Parameter</th>
+							<th>Type</th>
+							<th>Required</th>
+							<th>Default value</th>
+							<th>Description</th>
+						</thead>
+						<tbody>
+							<tr>
+								<td>url</td>
+								<td>string</td>
+								<td>Yes</td>
+								<td>null</td>
+								<td>The file url or the file path.</td>
+							</tr>
+							<tr>
+								<td>width</td>
+								<td>integer</td>
+								<td>NO</td>
+								<td>600</td>
+								<td>The box width.</td>
+							</tr>
+							<tr>
+								<td>height</td>
+								<td>integer</td>
+								<td>NO</td>
+								<td>400</td>
+								<td>The box height.</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+
+
+
+			<div class="row" id="facebookInfo">
+				<h2>facebookInfo</h2>
+				<div class="content">
+					This function will help you get facebook user's information.
+					<pre><code class="php">$result = $PHPultimate->facebookInfo("LRachiiid");
+echo $result->id;
+echo $result->first_name;
+echo $result->last_name;
+echo $result->gender;
+echo $result->name;</code></pre>
+					<h3>Output :</h3>
+					<div class="output">100006405283327 <br />Rachid <br/> Laasri <br />male<br />Rachid Laasri</div>
+					<table>
+						<thead>
+							<th>Parameter</th>
+							<th>Type</th>
+							<th>Required</th>
+							<th>Default value</th>
+							<th>Description</th>
+						</thead>
+						<tbody>
+							<tr>
+								<td>username</td>
+								<td>string</td>
+								<td>Yes</td>
+								<td>null</td>
+								<td>facebook username or id.</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+
+			<div class="row" id="facebookImage">
+				<h2>facebookImage</h2>
+				<div class="content">
+					This function will help you get facebook user's profile picture.
+					<pre><code class="php">echo $PHPultimate->facebookImage('lrachiiid', 200, 200);</code></pre>
+					<h3>Output :</h3>
+					<div class="output">https://fbcdn-profile-a.akamaihd.net/hprofile-ak-xap1/v/t1.0-1/p200x200/10616222_1559933694230125_2354453805236256828_n.jpg?oh=ba1a33ecb8c7e992a06061ab01dff18b&oe=54C97A13&__gda__=1420693228_aea88d82fec81e82cd59aa0a84d19102</div>
+					<table>
+						<thead>
+							<th>Parameter</th>
+							<th>Type</th>
+							<th>Required</th>
+							<th>Default value</th>
+							<th>Description</th>
+						</thead>
+						<tbody>
+							<tr>
+								<td>username</td>
+								<td>string</td>
+								<td>Yes</td>
+								<td>null</td>
+								<td>facebook username or id.</td>
+							</tr>
+							<tr>
+								<td>width</td>
+								<td>integer</td>
+								<td>NO</td>
+								<td>200</td>
+								<td>Picture width in pixels.</td>
+							</tr>
+							<tr>
+								<td>height</td>
+								<td>integer</td>
+								<td>NO</td>
+								<td>200</td>
+								<td>Picture height in pixels.</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+
+			<div class="row" id="BBCODE">
+				<h2>BBCODE</h2>
+				<div class="content">
+					This function will help you to convert BBCODE to html.
+					<pre><code class="php">echo $PHPultimate->BBCODE('I would like to [b]emphasize[/b] this.');</code></pre>
+					<h3>Output :</h3>
+					<div class="output">I would like to <strong>emphasize</strong> this.</div>
+					<table>
+						<thead>
+							<th>Parameter</th>
+							<th>Type</th>
+							<th>Required</th>
+							<th>Default value</th>
+							<th>Description</th>
+						</thead>
+						<tbody>
+							<tr>
+								<td>txt</td>
+								<td>string</td>
+								<td>Yes</td>
+								<td>null</td>
+								<td>bbcode string.</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+
+
+			<div class="row" id="badWords">
+				<h2>badWords</h2>
+				<div class="content">
+					With this function you can replace any words in a given string.
+					<pre><code class="php">echo $PHPultimate->badWords('Lorem Ipsum is simply dummy text of the printing and typesetting industry.', 'Ipsum,typesetting');</code></pre>
+					<h3>Output :</h3>
+					<div class="output">Lorem *** is simply dummy text of the printing and *** industry.</div>
+					<table>
+						<thead>
+							<th>Parameter</th>
+							<th>Type</th>
+							<th>Required</th>
+							<th>Default value</th>
+							<th>Description</th>
+						</thead>
+						<tbody>
+							<tr>
+								<td>str</td>
+								<td>string</td>
+								<td>Yes</td>
+								<td>null</td>
+								<td>string to replace in.</td>
+							</tr>
+							<tr>
+								<td>replace</td>
+								<td>string</td>
+								<td>Yes</td>
+								<td>null</td>
+								<td>words to replace.</td>
+							</tr>
+							<tr>
+								<td>replaceWith</td>
+								<td>string</td>
+								<td>NO</td>
+								<td>***</td>
+								<td>string to replace with.</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+
+			<div class="row" id="timeAgo">
+				<h2>timeAgo</h2>
+				<div class="content">
+					With this function you can generate the time ago.
+					<pre><code class="php">echo $PHPultimate->timeAgo(1412528672);</code></pre>
+					<h3>Output :</h3>
+					<div class="output">9 minutes ago.</div>
+					<table>
+						<thead>
+							<th>Parameter</th>
+							<th>Type</th>
+							<th>Required</th>
+							<th>Default value</th>
+							<th>Description</th>
+						</thead>
+						<tbody>
+							<tr>
+								<td>time</td>
+								<td>int</td>
+								<td>Yes</td>
+								<td>null</td>
+								<td>time to manipulate.</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+
+			<div class="row" id="byteConvert">
+				<h2>byteConvert</h2>
+				<div class="content">
+					This function will help you to convert bytes to readable size.
+					<pre><code class="php">echo $PHPultimate->byteConvert(10394);</code></pre>
+					<h3>Output :</h3>
+					<div class="output">10,15 KB.</div>
+					<table>
+						<thead>
+							<th>Parameter</th>
+							<th>Type</th>
+							<th>Required</th>
+							<th>Default value</th>
+							<th>Description</th>
+						</thead>
+						<tbody>
+							<tr>
+								<td>bytes</td>
+								<td>int</td>
+								<td>Yes</td>
+								<td>0</td>
+								<td>size in bytes.</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+
+			<div class="row" id="file_extension">
+				<h2>file_extension</h2>
+				<div class="content">
+					This function will help you to extract the extension from the file name.
+					<pre><code class="php">echo $PHPultimate->file_extension("random_text_file.txt", 1);</code></pre>
+					<h3>Output :</h3>
+					<div class="output">TXT</div>
+					<pre><code class="php">echo file_extension("random_text_file.txt");
+echo file_extension("random_text_file.txt", 0);</code></pre>
+					<h3>Output :</h3>
+					<div class="output">.TXT</div>
+					<table>
+						<thead>
+							<th>Parameter</th>
+							<th>Type</th>
+							<th>Required</th>
+							<th>Default value</th>
+							<th>Description</th>
+						</thead>
+						<tbody>
+							<tr>
+								<td>filename</td>
+								<td>string</td>
+								<td>Yes</td>
+								<td>null</td>
+								<td>file name.</td>
+							</tr>
+							<tr>
+								<td>type</td>
+								<td>integer</td>
+								<td>No</td>
+								<td>0</td>
+								<td>type of result, 0 to show ".", 1 to not.</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+
+			<div class="row" id="urlValidation">
+				<h2>urlValidation</h2>
+				<div class="content">
+					This function will help you to validate any url.
+					<pre><code class="php">echo if($PHPultimate->urlValidation('http://something.com'))
+	echo 'This is a valid url.';
+else
+	echo 'Please enter a valid url.';</code></pre>
+					<h3>Output :</h3>
+					<div class="output">This is a valid url.</div>
+					<table>
+						<thead>
+							<th>Parameter</th>
+							<th>Type</th>
+							<th>Required</th>
+							<th>Default value</th>
+							<th>Description</th>
+						</thead>
+						<tbody>
+							<tr>
+								<td>url</td>
+								<td>string</td>
+								<td>Yes</td>
+								<td>null</td>
+								<td>URL to validate.</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+
+			<div class="row" id="getAllUrls">
+				<h2>getAllUrls</h2>
+				<div class="content">
+					This function will help you to get all URLs from a string.  
+					<pre><code class="php">$urls = $PHPultimate->getAllUrls("If you liked this script, please don't forget to rate it on http://codecanyon.net/item/phpultimate-class-25-useful-functions/8894610 , and you can see my other work here http://codecanyon.net/user/RachidLaasri/portfolio .");
+var_dump($urls);</code></pre>
+					<h3>Output :</h3>
+					<div class="output"><pre><code class="php">array(2) {
+[0] "http://codecanyon.net/item/phpultimate-class-25-useful-functions/8894610"
+[1] "http://codecanyon.net/user/RachidLaasri/portfolio"
+}
+</code></pre></div>
+					<table>
+						<thead>
+							<th>Parameter</th>
+							<th>Type</th>
+							<th>Required</th>
+							<th>Default value</th>
+							<th>Description</th>
+						</thead>
+						<tbody>
+							<tr>
+								<td>string</td>
+								<td>string</td>
+								<td>Yes</td>
+								<td>null</td>
+								<td>String to get URLs from.</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+
+			<div class="row" id="remoteDownload">
+				<h2>remoteDownload</h2>
+				<div class="content">
+					This function will help you to validate any url.
+					<pre><code class="php">echo $PHPultimate->remoteDownload('https://0.s3.envato.com/files/104900672/0000.png', 'myfile.jpg');</code></pre>
+					<table>
+						<thead>
+							<th>Parameter</th>
+							<th>Type</th>
+							<th>Required</th>
+							<th>Default value</th>
+							<th>Description</th>
+						</thead>
+						<tbody>
+							<tr>
+								<td>fileURL</td>
+								<td>string</td>
+								<td>Yes</td>
+								<td>null</td>
+								<td>file direct URL.</td>
+							</tr>
+							<tr>
+								<td>path</td>
+								<td>string</td>
+								<td>Yes</td>
+								<td>null</td>
+								<td>where to save the file, including the name and extension..</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+			
+			<div class="row" id="final">
+				<h2>Final word</h2>
+				<div class="content">
+					<p>
+					GGWP :)</p>
+				</div>
+			</div>
+
+
+		</div>
+	</section>
+
+<script src="//code.jquery.com/jquery-1.10.2.js"></script>
+<script src="assets/js/highlight.min.js"></script>
+<link rel="stylesheet" href="assets/css/highlightjs.css">
+<script>hljs.initHighlightingOnLoad();</script>
+<script src='assets/js/smooth-scroll.js'></script>
+<script type="text/javascript">
+	smoothScroll.init({
+		speed: 500,
+		easing: 'easeInOutCubic',
+		offset: 0,
+		updateURL: true,
+		callbackBefore: function ( toggle, anchor ) {},
+		callbackAfter: function ( toggle, anchor ) {}
+	});
+</script>
+<script type="text/javascript">
+	$(function(){
+		$("aside > ul > li").click(function (){
+			$( "aside > ul > li" ).each(function() {
+				$( this ).removeClass( "selected" );
+				$(this).find(':first-child').css('color', '#000'); 
+			});
+			$(this).addClass("selected");
+			$(this).find(':first-child').css('color', '#fff'); 
+		});
+	});
+</script>
+</body>
+</html>
