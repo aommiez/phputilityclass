@@ -1,7 +1,6 @@
 phputilityclass
 ===============
 
-docs : phputilitydocs.olo.wtf
-===============
+docs : http://phputilitydocs.olo.wtf
 
 
